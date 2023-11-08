@@ -1,0 +1,46 @@
+public class InsertionSortRecursive
+{
+
+    public static void insertionSortRecursive(int [] array,int n)
+    {
+
+        //base case
+        if(n<=1)
+            return ;
+
+       insertionSortRecursive(array,n-1);
+
+        int last = array[n-1];
+        int j = n-2;
+
+        while (j>=0 && array[j]>last)
+        {
+            array[j+1]=array[j];
+            j--;
+        }
+        array[j+1]=last;
+
+    }
+
+    public static void main(String[] args) {
+
+        int [] array = {1,5,3,0,9,7,6,4};
+        System.out.print("Before sorting: ");
+        print(array);
+        insertionSortRecursive(array,8);
+        System.out.println();
+        System.out.print("After  sorting: ");
+        print(array);
+
+    }
+
+    public static void print(int [] array)
+    {
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i]+ " ");
+        }
+    }
+
+
+
+}
